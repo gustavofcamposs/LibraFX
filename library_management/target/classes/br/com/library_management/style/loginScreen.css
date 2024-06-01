@@ -1,0 +1,39 @@
+.BackgroundLogin{
+    -fx-background-image: url(../imagens/pexels-john-diez-7578672.jpg   );
+    -fx-background-size: 100% 100%;
+}
+
+.Container{
+    -fx-background-radius: 15px;
+    -fx-background-color: #fefefe;
+}
+
+.TitleLogin{
+    -fx-font-family:'Courier New', Courier, monospace ;
+}
+
+.InputLogin {
+    -fx-background-color: transparent; /* Não é uma propriedade válida, deve usar transparent */
+
+    -fx-border-width: 0 0 1 0; /* Define a largura da borda apenas na parte inferior */
+    -fx-border-color: black; 
+    -fx-border-style: solid;
+}
+
+.InputLogin:focused {
+    -fx-border-color: #7BC8F6; /* Define a cor da borda ao focar */
+    -fx-border-radius: 7px;
+}
+
+.ButtonLogin{
+    -fx-background-color: #82A67D;
+
+    -fx-text-fill: white;
+    -fx-font-weight: bolder;
+
+    -fx-background-radius: 10px;
+}
+
+.ButtonLogin:hover{
+    -fx-background-color: linear-gradient(to bottom, #82A67D, #0CB577 ); /* Gradiente linear de cima para baixo */
+}

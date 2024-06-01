@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="978.0" styleClass="BackgroundLogin" stylesheets="@style/loginScreen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.library_management.LoginController">
+   <children>
+      <AnchorPane prefHeight="401.0" prefWidth="657.0" styleClass="Container">
+         <children>
+            <ImageView fitHeight="221.0" fitWidth="227.0" layoutX="26.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagens/giphy.gif.gif" />
+               </image>
+            </ImageView>
+            <TextField fx:id="userLogin" alignment="CENTER" layoutX="347.0" layoutY="167.0" prefHeight="31.0" prefWidth="237.0" promptText="Digite o seu Login" style="-fx-blend-mode: multiply;" styleClass="InputLogin" stylesheets="@style/loginScreen.css" />
+            <PasswordField fx:id="userPassword" alignment="CENTER" layoutX="347.0" layoutY="211.0" prefHeight="18.0" prefWidth="238.0" promptText="Digite a sua senha" styleClass="InputLogin" stylesheets="@style/loginScreen.css" />
+            <Button layoutX="413.0" layoutY="290.0" mnemonicParsing="false" onAction="#executeLogin" prefHeight="31.0" prefWidth="106.0" styleClass="ButtonLogin" text="Login" />
+            <Text fill="#343837" layoutX="308.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TitleLogin" text="Seja Bem-Vindo!" wrappingWidth="315.19997558593764">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+            <Label fx:id="messageLabel" alignment="CENTER" layoutX="314.0" layoutY="254.0" prefHeight="18.0" prefWidth="304.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</FlowPane>
