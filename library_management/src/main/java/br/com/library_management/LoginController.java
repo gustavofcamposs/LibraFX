@@ -30,6 +30,7 @@ public class LoginController {
     private Login login = new Login();
 
 
+    
     //Método que executa o Login.
     @FXML
     void executeLogin(ActionEvent event) {
@@ -51,12 +52,12 @@ public class LoginController {
         }
     }
 
-    
+
     //Método responsável por carregar a Home.fxml
     private void openNewWindow() {
         try {
             // Carrega o arquivo FXML da nova janela
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
             Scene scene = new Scene(loader.load());
             
             // Obtém a referência da janela atual

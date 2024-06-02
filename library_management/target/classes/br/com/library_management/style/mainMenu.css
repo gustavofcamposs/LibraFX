@@ -1,0 +1,47 @@
+/*Folha de estilo responsável pela estilização apenas do Menu ao lado Esquerdo*/
+
+.ContainerMenu{
+    -fx-max-width: 350;
+}
+
+.OpcoesMenu{
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #373737;
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0;
+    -fx-border-color: #94568C; 
+    -fx-border-style: solid;
+    -fx-border-radius: 7px;
+
+    -fx-font-family:'Courier New', Courier, monospace ;
+}
+
+.OpcoesMenu:hover{
+    -fx-background-color: #F0EEEB;
+    -fx-text-fill: #82A67D;
+
+    -fx-background-radius: 10px;
+    -fx-border-width: 0 0 0 0; /*Tirando a borda*/
+}
+
+
+.BotaoSair{
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #373737;
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0;
+    -fx-border-color: #94568C; 
+    -fx-border-style: solid;
+    -fx-border-radius: 7px; 
+}
+
+.BotaoSair:hover{
+    -fx-background-color: #FD4659;
+    -fx-text-fill: #f0EEEB;
+}
