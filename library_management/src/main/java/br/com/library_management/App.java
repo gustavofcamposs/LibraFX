@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import br.com.library_management.Util.WindowsManager;
+
 
 import java.io.IOException;
 
@@ -13,13 +15,18 @@ public class App extends Application {
 
     private static Scene scene;
 
+
+
+    @SuppressWarnings("static-access")
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
-        scene = new Scene(loadFXML("loginScreen"), 978, 708);
+        scene = new Scene(loadFXML("loginScreen")/* 978, 708 */);/*Não preciso definir o tamnho */
         
+        //Instanciando WindowsManager, class responsável por padronizar o tamanho das telas.
+        WindowsManager windowsmanager = new WindowsManager();
+        windowsmanager.applyStandardSize(stage); 
         stage.setScene(scene);
         stage.show();
-        
     }
 
     public static void setRoot(String fxml) throws IOException {
