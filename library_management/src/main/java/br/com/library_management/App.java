@@ -28,7 +28,7 @@ public class App extends Application {
 
         stage.setScene(scene);
 
-        //Realizando a conexão com o Banco de dados
+        //Realizando a conexão com o Banco de dados PRINCIPAL
         DatabaseConnection.getConnection();
         
         stage.show();

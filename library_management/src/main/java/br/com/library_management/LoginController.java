@@ -52,11 +52,8 @@ public class LoginController {
         }
     }
 
-    /*public TextField getUserLogin() {
-        return userLogin;
-    }*/
 
-    //Método responsável por carregar a Home.fxml
+    //Método responsável por carregar a Main.fxml
     private void openNewWindow() {
         try {
             // Carrega o arquivo FXML da nova janela

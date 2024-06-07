@@ -70,7 +70,7 @@ public class MainController {
 
             try {
 
-                //Método para Encerrar a conexão do banco de dados
+                //Método para Encerrar a conexão do banco de dados PRINCIPAL
                 DatabaseConnection.closeConnection();
 
                 //Obtém a janela Atual.
