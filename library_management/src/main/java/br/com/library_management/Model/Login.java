@@ -18,6 +18,8 @@ public class Login {
 
             try {
                 PreparedStatement stmt = conn.prepareStatement(query);
+
+                //ParâmetroIndex posição d "?" 
                 stmt.setObject(1, username);
                 stmt.setObject(2, senha);
                 ResultSet rs = stmt.executeQuery();
@@ -26,7 +28,11 @@ public class Login {
                 e.printStackTrace();
             } finally {
                 try {
-                    conn.close();
+                    conn.close();//Finalmente  encerrar a Conexão com o Banco de Dados
+
+                    //Verificando se foi realmente encerrado
+                    boolean closed = conn.isClosed();
+                    System.out.println("isClosed DB: " + closed);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

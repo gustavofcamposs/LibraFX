@@ -52,6 +52,9 @@ public class LoginController {
         }
     }
 
+    /*public TextField getUserLogin() {
+        return userLogin;
+    }*/
 
     //Método responsável por carregar a Home.fxml
     private void openNewWindow() {

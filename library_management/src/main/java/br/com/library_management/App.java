@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import br.com.library_management.Conexao.DatabaseConnection;
 import br.com.library_management.Util.WindowsManager;
 
 
@@ -16,7 +17,6 @@ public class App extends Application {
     private static Scene scene;
 
 
-
     @SuppressWarnings("static-access")
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
@@ -25,7 +25,12 @@ public class App extends Application {
         //Instanciando WindowsManager, class responsável por padronizar o tamanho das telas.
         WindowsManager windowsmanager = new WindowsManager();
         windowsmanager.applyStandardSize(stage); 
+
         stage.setScene(scene);
+
+        //Realizando a conexão com o Banco de dados
+        DatabaseConnection.getConnection();
+        
         stage.show();
     }
 
