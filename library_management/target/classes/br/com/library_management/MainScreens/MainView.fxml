@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1225.0" stylesheets="@../style/Components/MainViewMenu.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.library_management.MainController">
+   <left>
+      <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #FDFDFE;" styleClass="ContainerMenu" stylesheets="@../style/mainMenu.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="666.0" prefWidth="400.0">
+               <children>
+                  <Button fx:id="home" layoutX="75.0" layoutY="246.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" styleClass="OpcoesMenu" text="Home" />
+                  <Button fx:id="registerNewBook" layoutX="75.0" layoutY="297.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" styleClass="OpcoesMenu" text="Cadastrar Novo Livro" />
+                  <Button fx:id="settings" layoutX="75.0" layoutY="349.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" styleClass="OpcoesMenu" text="Configurações" />
+
+                  <ImageView fitHeight="155.0" fitWidth="180.0" layoutX="85.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="logoutButton" layoutX="134.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="81.0" styleClass="BotaoSair" text="Sair" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox fx:id="dynamicContent" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" stylesheets="@../style/Components/mainMenu.css" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

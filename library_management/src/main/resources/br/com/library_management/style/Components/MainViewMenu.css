@@ -1,7 +1,8 @@
 /*Folha de estilo responsável pela estilização apenas do Menu ao lado Esquerdo*/
 
+
 .ContainerMenu{
-    -fx-max-width: 350;
+    -fx-min-width: 350px;
 }
 
 .OpcoesMenu{

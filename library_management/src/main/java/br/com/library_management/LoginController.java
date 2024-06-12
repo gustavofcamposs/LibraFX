@@ -57,7 +57,7 @@ public class LoginController {
     private void openNewWindow() {
         try {
             // Carrega o arquivo FXML da nova janela
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/library_management/MainScreens/MainView.fxml"));
             Scene scene = new Scene(loader.load());
             
             // Obtém a referência da janela atual

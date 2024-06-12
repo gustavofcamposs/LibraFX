@@ -5,7 +5,7 @@ import java.io.IOException;
 
 //Importado para encerrar a conexão com o banco
 import br.com.library_management.Conexao.DatabaseConnection;
-
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
@@ -21,42 +22,58 @@ import javafx.scene.control.Alert.AlertType;
 public class MainController {
 
     @FXML
-    private AnchorPane contentPane; //contentPane é ID referente ao AnchorPane que está centralizado    
+    private VBox dynamicContent; //contentPane é ID referente ao AnchorPane que está centralizado    
 
     @FXML
-    private Button button1;
+    private Button home;
 
     @FXML
-    private Button button2;
+    private Button registerNewBook;
 
     @FXML
-    private Button button3;
+    private Button settings;
 
     @FXML
-    private Button logoutButton; // Referência ao botão de logout
+    private Button logoutButton; // Referência ao botão de logout   
 
 
 
     //Responsável por setar o AnchorPane (Center) as diferentes Telas.
     @FXML
     public void initialize() {
+
         //e -> (Expressão Lambda) && setContent(Caminho/Para/Tela1.fxml)
-        button1.setOnAction(e -> setContent("Tela 1"));
-        button2.setOnAction(e -> setContent("Tela 2"));
-        button3.setOnAction(e -> setContent("Tela 3"));
+        Platform.runLater(() -> {
+            home.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));
+            registerNewBook.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));  
+            settings.setOnAction(e -> setContent("/br/com/library_management/MainScreens/Screen_Settings.fxml"));
+        });
+
     }
 
 
-    private void setContent(String content) {
-        contentPane.getChildren().clear(); //Responsável por limpar qualquer contéudo que estiver sendo aprensentado (RESET);
+    private void setContent(String fxmlPath) {
+        dynamicContent.getChildren().clear(); // Limpa qualquer conteúdo que estiver sendo apresentado (RESET);
 
-        Label contentLabel = new Label(content); //Novo Rótulo que exibirá o conteúdo passado como argumento (content)
-        
-        //Node Child e Valor (Parâmetros).
-        AnchorPane.setTopAnchor(contentLabel, 100.00);
-        AnchorPane.setLeftAnchor(contentLabel, 100.00); 
+        try {
+            // Carrega o novo conteúdo do arquivo FXML
+            Parent newContent = FXMLLoader.load(getClass().getResource(fxmlPath));
 
-        contentPane.getChildren().add(contentLabel);
+            // Defina as dimensões do AnchorPane
+            AnchorPane.setTopAnchor(newContent, 0.0);
+            AnchorPane.setRightAnchor(newContent, 0.0);
+            AnchorPane.setBottomAnchor(newContent, 0.0);
+            AnchorPane.setLeftAnchor(newContent, 0.0);
+
+            // Adiciona o novo conteúdo ao contentPane
+            dynamicContent.getChildren().add(newContent);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Em caso de erro, você pode exibir uma mensagem ou realizar outra ação
+            Label errorLabel = new Label("Erro ao carregar a tela!" + fxmlPath);
+            dynamicContent.getChildren().add(errorLabel);
+        }
     }
 
 
@@ -77,7 +94,7 @@ public class MainController {
                 Stage stage =  (Stage) logoutButton.getScene().getWindow();
 
                 //Carreaga a próxima Janela(Login)
-                Parent root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/br/com/library_management/LoginScreen/loginScreen.fxml"));
 
                 // Cria uma nova cena com a tela de login
                 Scene scene = new Scene(root);
@@ -95,6 +112,4 @@ public class MainController {
         }
     }
 
-
-    // Método para encerrar a conexão com o Banco de dados
 }
