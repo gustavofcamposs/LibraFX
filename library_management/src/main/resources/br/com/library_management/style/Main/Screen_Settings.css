@@ -1,0 +1,24 @@
+
+
+
+/* Css Responsável por tirar a Borda do ScrollPane */
+.ScrollPane{
+    -fx-background-color: transparent; 
+    -fx-border-color: transparent;
+}
+
+/*Container que está dentro do ScrollPane*/
+
+.ContentAnchorPane{
+
+}
+
+/* Padronizando a box dos conteúdos*/
+
+.Box_Conteudo{ 
+    -fx-border-width: 0 0 0.5 0; /* Define a largura da borda apenas na parte inferior */
+    -fx-border-color: #373737; 
+    -fx-border-style: solid;
+    -fx-border-radius: 10px;
+    -fx-font-family:'Courier New', Courier, monospace ;
+}

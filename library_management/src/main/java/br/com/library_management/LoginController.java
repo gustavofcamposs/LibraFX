@@ -3,6 +3,8 @@ package br.com.library_management;
 
 import java.io.IOException;
 
+import br.com.library_management.Model.AuthenticatedUser;
+import br.com.library_management.Model.Employee;
 import br.com.library_management.Model.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,7 +31,6 @@ public class LoginController {
     //Instanciando o Objeto login
     private Login login = new Login();
 
-
     
     //Método que executa o Login.
     @FXML
@@ -43,8 +44,11 @@ public class LoginController {
             String username = userLogin.getText();
             String password = userPassword.getText();
 
-            if (login.verificarLogin(username, password)) {
-                System.out.println("Login bem-sucedido!");
+            Employee employee = login.verificarLogin(username, password);
+            if (employee != null) {
+
+                //Responsável por registrar os valores do Funcionário
+                AuthenticatedUser.getInstance().setAuthenticatedEmployee(employee);
                 openNewWindow();
             } else {  
                 messageLabel.setText("Nome de usuário ou senha incorretos");
@@ -57,7 +61,7 @@ public class LoginController {
     private void openNewWindow() {
         try {
             // Carrega o arquivo FXML da nova janela
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/library_management/MainScreens/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/library_management/View/MainScreens/MainView.fxml"));
             Scene scene = new Scene(loader.load());
             
             // Obtém a referência da janela atual

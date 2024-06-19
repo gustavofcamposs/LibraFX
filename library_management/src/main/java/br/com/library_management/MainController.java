@@ -46,7 +46,7 @@ public class MainController {
         Platform.runLater(() -> {
             home.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));
             registerNewBook.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));  
-            settings.setOnAction(e -> setContent("/br/com/library_management/MainScreens/Screen_Settings.fxml"));
+            settings.setOnAction(e -> setContent("/br/com/library_management/View/MainScreens/Screen_Settings.fxml"));
         });
 
     }
@@ -94,7 +94,7 @@ public class MainController {
                 Stage stage =  (Stage) logoutButton.getScene().getWindow();
 
                 //Carreaga a próxima Janela(Login)
-                Parent root = FXMLLoader.load(getClass().getResource("/br/com/library_management/LoginScreen/loginScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/br/com/library_management/View/LoginScreen/loginScreen.fxml"));
 
                 // Cria uma nova cena com a tela de login
                 Scene scene = new Scene(root);

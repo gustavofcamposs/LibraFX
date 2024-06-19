@@ -18,13 +18,13 @@ public class App extends Application {
     @SuppressWarnings("static-access")
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
-        scene = new Scene(loadFXML("/br/com/library_management/LoginScreen/loginScreen")/* 978, 708 */);/*Não preciso definir o tamnho */
+        scene = new Scene(loadFXML("/br/com/library_management/View/LoginScreen/loginScreen")/* 978, 708 */);/*Não preciso definir o tamnho */
         
         //Instanciando WindowsManager, class responsável por padronizar o tamanho das telas.
         WindowsManager windowsmanager = new WindowsManager();
         windowsmanager.applyStandardSize(stage); 
 
-            stage.setScene(scene);
+        stage.setScene(scene);
 
         //Realizando a conexão com o Banco de dados PRINCIPAL
         DatabaseConnection.getConnection();
@@ -44,5 +44,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
-}
+}   
