@@ -12,7 +12,7 @@ public class WindowsManager {
     private static boolean maximized = false; /*False = Não Maximizada && True = Maximizado */
 
 
-    public static void applyStandardSize(Stage stage) {
+    public void applyStandardSize(Stage stage) {
         
         //Stage(Janela) setado os valores estático
         stage.setWidth(width);

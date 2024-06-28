@@ -20,7 +20,7 @@
                   <Image url="@../../image/giphy.gif.gif" />
                </image>
             </ImageView>
-            <TextField fx:id="userLogin" alignment="CENTER" layoutX="347.0" layoutY="167.0" prefHeight="31.0" prefWidth="237.0" promptText="Digite o seu Login" style="-fx-blend-mode: multiply;" styleClass="InputLogin" stylesheets="@style/loginScreen.css" />
+            <TextField fx:id="userLogin" alignment="CENTER" layoutX="347.0" layoutY="167.0" prefHeight="31.0" prefWidth="237.0" promptText="Digite o seu Login" styleClass="InputLogin" stylesheets="@style/loginScreen.css" />
             <PasswordField fx:id="userPassword" alignment="CENTER" layoutX="347.0" layoutY="211.0" prefHeight="18.0" prefWidth="238.0" promptText="Digite a sua senha" styleClass="InputLogin" stylesheets="@style/loginScreen.css" />
             <Button layoutX="413.0" layoutY="290.0" mnemonicParsing="false" onAction="#executeLogin" prefHeight="31.0" prefWidth="106.0" styleClass="ButtonLogin" text="Login" />
             <Text fill="#343837" layoutX="308.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="TitleLogin" text="Seja Bem-Vindo!" wrappingWidth="315.19997558593764">

@@ -1,0 +1,79 @@
+
+/*Configuração do Menu*/
+.ContainerMenu{
+    -fx-background-color: #262626;
+    -fx-min-width: 350px;
+}
+
+.OpcoesMenu{
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #FDFDFE;
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0;
+    -fx-border-color: #94568C; 
+    -fx-border-style: solid;
+    -fx-border-radius: 7px;
+
+    -fx-font-family:'Courier New', Courier, monospace ;
+}
+
+.OpcoesMenu:hover{
+    -fx-background-color: #343837;
+    -fx-text-fill: #82A67D;
+
+    -fx-background-radius: 10px;
+    -fx-border-width: 0 0 0 0; /*Tirando a borda*/
+}
+
+
+.BotaoSair{
+    -fx-background-color: transparent;
+
+    -fx-text-fill: #FDFDFE;
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0;
+    -fx-border-color: #94568C; 
+    -fx-border-style: solid;
+    -fx-border-radius: 7px; 
+}
+
+.BotaoSair:hover{
+    -fx-background-color: #D5174E;
+    -fx-text-fill: #f0EEEB;
+}
+
+
+/**/
+
+/*Plano de fundo do Conteúdo Dinâmico que aparecerá de acordo com que for clicado do MenuLateral*/
+.dynamicContent{
+    -fx-background-color: #242424;
+}
+
+.ContentAnchorPane{
+    -fx-background-color: #242424;
+}
+
+
+.Box_contents{ 
+
+}
+
+.TitleBox{
+    -fx-fill: #FEFEFE; 
+    -fx-font-weight: bolder;
+}
+
+.p{
+    -fx-fill: #D8DCD6; 
+    -fx-font-weight: bolder;
+}
+
+.label{
+    -fx-fill: green;
+}

@@ -13,7 +13,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
@@ -22,7 +21,10 @@ import javafx.scene.control.Alert.AlertType;
 public class MainController {
 
     @FXML
-    private VBox dynamicContent; //contentPane é ID referente ao AnchorPane que está centralizado    
+    private VBox dynamicContent; //contentPane é ID referente ao AnchorPane que está centralizado
+
+    @FXML
+    private VBox menuContent;
 
     @FXML
     private Button home;
@@ -37,46 +39,61 @@ public class MainController {
     private Button logoutButton; // Referência ao botão de logout   
 
 
-
-    //Responsável por setar o AnchorPane (Center) as diferentes Telas.
     @FXML
     public void initialize() {
 
         //e -> (Expressão Lambda) && setContent(Caminho/Para/Tela1.fxml)
         Platform.runLater(() -> {
-            home.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));
-            registerNewBook.setOnAction(e -> setContent("/fxml/main/tela1.fxml"));  
-            settings.setOnAction(e -> setContent("/br/com/library_management/View/MainScreens/Screen_Settings.fxml"));
+            home.setOnAction(e -> loadContent("/fxml/main/tela1.fxml"));
+            registerNewBook.setOnAction(e -> loadContent("/fxml/main/tela1.fxml"));  
+            settings.setOnAction(e -> loadContent("/br/com/library_management/View/MainScreens/Screen_Settings.fxml"));
         });
 
     }
 
 
-    private void setContent(String fxmlPath) {
-        dynamicContent.getChildren().clear(); // Limpa qualquer conteúdo que estiver sendo apresentado (RESET);
+    //Usado para mudar a cor
+    @SuppressWarnings("exports")
+    public VBox getDynamicContent() {
+        return dynamicContent;
+    }
 
+    @SuppressWarnings("exports")
+    public VBox getMenuContent(){
+        return menuContent;
+    }
+
+    private void loadContent(String fxmlPath) {
         try {
-            // Carrega o novo conteúdo do arquivo FXML
-            Parent newContent = FXMLLoader.load(getClass().getResource(fxmlPath));
 
-            // Defina as dimensões do AnchorPane
-            AnchorPane.setTopAnchor(newContent, 0.0);
-            AnchorPane.setRightAnchor(newContent, 0.0);
-            AnchorPane.setBottomAnchor(newContent, 0.0);
-            AnchorPane.setLeftAnchor(newContent, 0.0);
+            /*Localiza e obtém a URL do arquivo FXML. Esta etapa é essencial para informar ao FXMLLoader onde encontrar o
+            arquivo FXML que será carregado.*/
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
 
-            // Adiciona o novo conteúdo ao contentPane
-            dynamicContent.getChildren().add(newContent);
+            //Carrega o conteúdo do arquivo FXML especificado pela URL anteriormente obtida
+            Parent newContent = loader.load();
+    
+            // Se o controlador carregado for do tipo Settings  Controller, configura o MainController
+            if (loader.getController() instanceof SettingsController) {
+                SettingsController settingsController = loader.getController();
+                settingsController.setMainController(this); // Passa a instância atual do MainController
 
+                SettingsController settingsController2 = loader.getController();
+                settingsController2.setMenuController(this); // Passa a instância atual do MainController
+            }
+
+            // Limpa o conteúdo atual e define o novo conteúdo
+            dynamicContent.getChildren().clear();
+            dynamicContent.getChildren().add(newContent); //O que foi carregado mostrará na tela
+    
         } catch (IOException e) {
             e.printStackTrace();
-            // Em caso de erro, você pode exibir uma mensagem ou realizar outra ação
-            Label errorLabel = new Label("Erro ao carregar a tela!" + fxmlPath);
+            // Em caso de erro, exibe uma mensagem
+            Label errorLabel = new Label("Erro ao carregar a tela! " + fxmlPath);
             dynamicContent.getChildren().add(errorLabel);
         }
     }
-
-
+    
     // Método de Logout
     public void logout(){
 
@@ -98,7 +115,7 @@ public class MainController {
 
                 // Cria uma nova cena com a tela de login
                 Scene scene = new Scene(root);
-
+                
                 // Define a cena no stage
                 stage.setScene(scene);
             } catch (IOException e) {

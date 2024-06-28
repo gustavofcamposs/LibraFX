@@ -1,7 +1,8 @@
-/*Folha de estilo responsável pela estilização apenas do Menu ao lado Esquerdo*/
 
 
+/*Configuração do Menu*/
 .ContainerMenu{
+    -fx-background-color: #FDFDFE;
     -fx-min-width: 350px;
 }
 
@@ -46,3 +47,7 @@
     -fx-background-color: #FD4659;
     -fx-text-fill: #f0EEEB;
 }
+
+
+/**/
+/*Plano de fundo do Conteúdo Dinâmico que aparecerá de acordo com que for clicado do MenuLateral*/

@@ -15,7 +15,6 @@ public class App extends Application {
     private static Scene scene;
 
 
-    @SuppressWarnings("static-access")
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
         scene = new Scene(loadFXML("/br/com/library_management/View/LoginScreen/loginScreen")/* 978, 708 */);/*Não preciso definir o tamnho */
@@ -23,6 +22,8 @@ public class App extends Application {
         //Instanciando WindowsManager, class responsável por padronizar o tamanho das telas.
         WindowsManager windowsmanager = new WindowsManager();
         windowsmanager.applyStandardSize(stage); 
+
+        
 
         stage.setScene(scene);
 
@@ -33,7 +34,7 @@ public class App extends Application {
     }
 
     public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+        scene.setRoot(loadFXML(fxml));  
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
