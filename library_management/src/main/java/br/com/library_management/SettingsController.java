@@ -25,16 +25,17 @@ public class SettingsController {
     @FXML
     private Label labelPhone;   
 
-    private MainController mainController;
+    private MainController mainController; //Atributo para armazenar a instancia da Cena 
 
-    private MainController menuController;
+    private MainController menuController; //Atributo para armazenar a instancia da Cena 
+
 
 
     @FXML
     public void initialize() {
-        // Exemplo de chamada no método initialize, para testar ao iniciar a tela
         showInformationEmployee();
         setMainController(mainController);
+        setMenuController(menuController);
     }
 
 
@@ -56,34 +57,48 @@ public class SettingsController {
             VBox dynamicContent = mainController.getDynamicContent();
             VBox menuContent = menuController.getMenuContent();
 
+
             //Limpando e atribuindo a nova folha de Estilo
-            dynamicContent.getScene().getStylesheets().clear();
-            menuContent.getStylesheets().clear();
+
+            menuContent.getStylesheets().clear();  //Menu começa com o whiteThme ATIVO, por isso preciso limpar as StyleSeeths e adicionar dnv.
+            dynamicContent.getStylesheets().clear();
             containerScrollPane.getScene().getStylesheets().clear();
 
-            dynamicContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/darkTheme.css").toExternalForm());
+
+            //Adicionando thema 
+
             menuContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/darkTheme.css").toExternalForm());
+            menuContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Components/menu.css").toExternalForm());
+
+            dynamicContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/darkTheme.css").toExternalForm());
             containerScrollPane.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/darkTheme.css").toExternalForm());
         } else {
             System.out.println("MainController or Menu is not set.");
         }
     }
 
+
     @FXML
     public void switchToWhiteTheme() {
         if (mainController != null || menuController != null) {
 
             //Instanciando e atribuindo o Container do Main && menuContent
-            VBox dynamicContent = mainController.getDynamicContent();
+            VBox dynamicContent = mainController.getDynamicContent();   
             VBox menuContent = menuController.getMenuContent();
            
             //Limpando e atribuindo a nova folha de Estilo
-            dynamicContent.getScene().getStylesheets().clear();
-            //menuContent.getScene().getStylesheets().clear();
+
+            menuContent.getStylesheets().clear();
+            dynamicContent.getStylesheets().clear();
             containerScrollPane.getScene().getStylesheets().clear();
 
-            dynamicContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/clearTheme.css").toExternalForm());
+
+            //Adicionando thema 
+            
             menuContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/clearTheme.css").toExternalForm());
+            menuContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Components/menu.css").toExternalForm());
+
+            dynamicContent.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/clearTheme.css").toExternalForm());
             containerScrollPane.getScene().getStylesheets().add(getClass().getResource("/br/com/library_management/style/Themas/clearTheme.css").toExternalForm());
         } else {
             System.out.println("MainController or Menu is not set.");

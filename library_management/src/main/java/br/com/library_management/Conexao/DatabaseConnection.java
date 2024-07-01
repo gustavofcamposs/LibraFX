@@ -50,7 +50,7 @@ public class DatabaseConnection {
             }
             
         } else {
-            System.out.println("Conexão não foi inicializada!");
+            //Conexão não foi Incializada
         }
     }
     

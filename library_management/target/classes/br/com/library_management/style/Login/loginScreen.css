@@ -1,18 +1,25 @@
-.BackgroundLogin{
-    -fx-background-image: url(../image/pexels-john-diez-7578672.jpg);
+
+.background{
+    -fx-background-image: url(../../image/Login/backgroundImage.jpg);
     -fx-background-size: 100% 100%;
 }
 
-.Container{
+.contentBlockLogin{
     -fx-background-radius: 15px;
     -fx-background-color: #fefefe;
 }
 
-.TitleLogin{
+
+/*  Title*/
+
+.titleLogin{
     -fx-font-family:'Courier New', Courier, monospace ;
 }
 
-.InputLogin {
+
+/*  Default style of the two data entry fields*/
+
+.inputLogin {
     -fx-background-color: transparent; /* Não é uma propriedade válida, deve usar transparent */
 
     -fx-border-width: 0 0 1 0; /* Define a largura da borda apenas na parte inferior */
@@ -20,12 +27,17 @@
     -fx-border-style: solid;
 }
 
-.InputLogin:focused {
+/*  when used */
+.inputLogin:focused {
     -fx-border-color: #7BC8F6; /* Define a cor da borda ao focar */
     -fx-border-radius: 7px;
 }
 
-.ButtonLogin{
+
+
+/*  Style of the button responsible for logging in*/
+
+.buttonLogin{
     -fx-background-color: #82A67D;
 
     -fx-text-fill: white;
@@ -34,6 +46,6 @@
     -fx-background-radius: 10px;
 }
 
-.ButtonLogin:hover{
+.buttonLogin:hover{
     -fx-background-color: linear-gradient(to bottom, #82A67D, #0CB577 ); /* Gradiente linear de cima para baixo */
 }

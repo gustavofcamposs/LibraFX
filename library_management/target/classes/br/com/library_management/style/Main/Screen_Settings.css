@@ -1,45 +1,54 @@
+/* The default container setting - in darkTheme and whiteThema only changes the color*/
+/* A definição predefinida do container - em darkTheme e whiteThema apenas altera a cor*/
 
 
 
-/* Css Responsável por tirar a Borda do ScrollPane */
-.ScrollPane{
+/*  Removing what is defined by default in the ScrollPane container */
+.containerScroll{
     -fx-background-color: transparent; 
     -fx-border-color: transparent;
-
 }
 
-/* Torna as barras de rolagem invisíveis */
-.ScrollPane > .scroll-bar {
+/*  Making the scroll invisible */
+.containerScroll > .scroll-bar {
     -fx-opacity: 0;
-    -fx-pref-width: 0; /* Opcional: Reduz a largura da barra de rolagem vertical */
-    -fx-pref-height: 0; /* Opcional: Reduz a altura da barra de rolagem horizontal */
+
+    /*Optional: Reduces the width of the vertical and horizontal scroll bar */
+    -fx-pref-width: 0; 
+    -fx-pref-height: 0; 
 }
 
-/* Ajusta o padding da viewport para evitar espaço adicional */
-.ScrollPane > .viewport {
-    -fx-padding: 0;
-}
-
-
-/*Container que está dentro do ScrollPane*/
-
+/*  Is about the Container inside the Scroll container  */
 .ContentAnchorPane{
     background-color: #FDFDFE;
 }
 
-/* Padronizando a box dos conteúdos*/
 
-.Box_contents{ 
-    -fx-border-width: 0 0 0.5 0; /* Define a largura da borda apenas na parte inferior */
-    -fx-border-color: #373737; 
+
+
+/*Content styling (Your information, system preferences)*/
+
+
+/*  Standard style for defining each content block as (Your information, system preferences) */
+.contentBlock{ 
+    -fx-background-radius: 10px;
+
+    -fx-border-width: 0 0 0.5 0; /* Define a largura da borda apenas na parte inferior */ 
     -fx-border-style: solid;
     -fx-border-radius: 10px;
+
     -fx-font-family:'Courier New', Courier, monospace ;
 }
 
-/* Tamnho da fonte dos intens (Email, nome, fone) */
+/*  Defined the Title style for each content block in the settings screen  */
+.titleContainer{
+    -fx-font-family: 'Courier New', Courier, monospace 'Courier New', Courier, monospace;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
 
-.p{
+/*  Default size of topics within the block (E-mail, nome, fone, themes) */
+.topics{
     -fx-font-size: 13px;
 }
 
@@ -48,18 +57,18 @@
     font-size: 9.5px;
 }
 
-.TitleBox{
-    -fx-font-family: 'Courier New', Courier, monospace 'Courier New', Courier, monospace;
-    -fx-font-size: 25px;
-}
 
 
-/*Opção do tema Escuro*/
+
+/*Style of the buttons in the contents of the "System Preferences" container*/
+
+
+/*  dark theme */
 .optionDarkTheme{
     -fx-background-radius: 100%;
     -fx-background-color: #373737;
 }
 
-.optionClearTheme{
+.optionWhiteTheme{
     -fx-background-radius: 100%;
 }

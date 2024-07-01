@@ -1,79 +1,61 @@
+/*  Setting menu colors in the dark theme */
 
-/*Configuração do Menu*/
+/*  Menu background */
 .ContainerMenu{
     -fx-background-color: #262626;
-    -fx-min-width: 350px;
 }
 
 .OpcoesMenu{
-    -fx-background-color: transparent;
-
     -fx-text-fill: #FDFDFE;
-    -fx-font-size: 14px;  
-    -fx-font-weight: bolder;
-
-    -fx-border-width: 0 0 0.2 0;
-    -fx-border-color: #94568C; 
-    -fx-border-style: solid;
-    -fx-border-radius: 7px;
-
-    -fx-font-family:'Courier New', Courier, monospace ;
+    -fx-border-color: #D8DCD6;  
 }
 
 .OpcoesMenu:hover{
     -fx-background-color: #343837;
-    -fx-text-fill: #82A67D;
-
-    -fx-background-radius: 10px;
-    -fx-border-width: 0 0 0 0; /*Tirando a borda*/
 }
 
-
+/* BotaoSair settings - only changed the color before the hover */
 .BotaoSair{
-    -fx-background-color: transparent;
-
     -fx-text-fill: #FDFDFE;
-    -fx-font-size: 14px;  
-    -fx-font-weight: bolder;
-
-    -fx-border-width: 0 0 0.2 0;
-    -fx-border-color: #94568C; 
-    -fx-border-style: solid;
-    -fx-border-radius: 7px; 
-}
-
-.BotaoSair:hover{
-    -fx-background-color: #D5174E;
-    -fx-text-fill: #f0EEEB;
+    -fx-border-color: #D8DCD6;
 }
 
 
-/**/
 
-/*Plano de fundo do Conteúdo Dinâmico que aparecerá de acordo com que for clicado do MenuLateral*/
+/*  --  End of menu style  --  */
+
+
+
+
+
+/*  Dynamic content background according to Menu options */
 .dynamicContent{
     -fx-background-color: #242424;
 }
 
+/*  Changing the color of the Container on the Settings screen */
 .ContentAnchorPane{
     -fx-background-color: #242424;
 }
 
-
-.Box_contents{ 
-
+/*  Changing color*/
+.contentBlock{ 
+    -fx-background-color: #262626;
+    -fx-border-color: #D8DCD6; 
 }
 
-.TitleBox{
+
+/*  In the items below, only the font color is being changed to white (Do contentBlock) */
+.titleContainer{
     -fx-fill: #FEFEFE; 
     -fx-font-weight: bolder;
 }
 
-.p{
+.topics{
     -fx-fill: #D8DCD6; 
     -fx-font-weight: bolder;
 }
 
 .label{
-    -fx-fill: green;
+    -fx-text-fill: #D8DCD6;
 }

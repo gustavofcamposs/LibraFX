@@ -1,53 +1,33 @@
+/*  Setting menu colors in the dark theme */
 
-
-/*Configuração do Menu*/
+/*  Menu background */
 .ContainerMenu{
     -fx-background-color: #FDFDFE;
-    -fx-min-width: 350px;
 }
 
 .OpcoesMenu{
-    -fx-background-color: transparent;
-
     -fx-text-fill: #373737;
-    -fx-font-size: 14px;  
-    -fx-font-weight: bolder;
-
-    -fx-border-width: 0 0 0.2 0;
+    
     -fx-border-color: #94568C; 
-    -fx-border-style: solid;
-    -fx-border-radius: 7px;
-
-    -fx-font-family:'Courier New', Courier, monospace ;
 }
 
 .OpcoesMenu:hover{
     -fx-background-color: #F0EEEB;
-    -fx-text-fill: #82A67D;
-
-    -fx-background-radius: 10px;
-    -fx-border-width: 0 0 0 0; /*Tirando a borda*/
 }
 
-
+/* BotaoSair settings - only changed the color before the hover */
 .BotaoSair{
-    -fx-background-color: transparent;
-
     -fx-text-fill: #373737;
-    -fx-font-size: 14px;  
-    -fx-font-weight: bolder;
+    -fx-border-color: #94568C;
+}
 
-    -fx-border-width: 0 0 0.2 0;
+
+
+/*  --  End of menu style  --  */
+
+
+/*  Changing color */
+.contentBlock{
+    -fx-background-color: #FDFDFE;
     -fx-border-color: #94568C; 
-    -fx-border-style: solid;
-    -fx-border-radius: 7px; 
 }
-
-.BotaoSair:hover{
-    -fx-background-color: #FD4659;
-    -fx-text-fill: #f0EEEB;
-}
-
-
-/**/
-/*Plano de fundo do Conteúdo Dinâmico que aparecerá de acordo com que for clicado do MenuLateral*/

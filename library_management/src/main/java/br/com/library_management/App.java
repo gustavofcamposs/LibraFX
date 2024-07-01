@@ -10,7 +10,10 @@ import br.com.library_management.Util.WindowsManager;
 
 import java.io.IOException;
     
+
+
 public class App extends Application {
+
 
     private static Scene scene;
 
@@ -22,8 +25,6 @@ public class App extends Application {
         //Instanciando WindowsManager, class responsável por padronizar o tamanho das telas.
         WindowsManager windowsmanager = new WindowsManager();
         windowsmanager.applyStandardSize(stage); 
-
-        
 
         stage.setScene(scene);
 

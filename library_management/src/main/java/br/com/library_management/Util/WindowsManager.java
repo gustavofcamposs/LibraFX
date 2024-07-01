@@ -2,16 +2,21 @@ package br.com.library_management.Util;
 
 import javafx.stage.Stage;
 
+
 /* Configuração padrão para todas as Janelas em meu Projeto.*/
 public class WindowsManager {
     
+
     /*são variáveis estáticas. Isso significa que elas mantêm seu valor entre todas as instâncias da 
     classe WindowManager e, por extensão, entre todas as janelas que utilizam essa classe. */
     private static double width = 1200;
+
     private static double height = 750;
+    
     private static boolean maximized = false; /*False = Não Maximizada && True = Maximizado */
 
 
+    
     public void applyStandardSize(Stage stage) {
         
         //Stage(Janela) setado os valores estático

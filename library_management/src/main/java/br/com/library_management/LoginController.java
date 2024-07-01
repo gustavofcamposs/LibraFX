@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 public class LoginController {
 
+
     @FXML
     private Label messageLabel;
 
@@ -31,6 +32,7 @@ public class LoginController {
     //Instanciando o Objeto login
     private Login login = new Login();
 
+    
     
     //Método que executa o Login.
     @FXML
@@ -61,7 +63,7 @@ public class LoginController {
     private void openNewWindow() {
         try {
             // Carrega o arquivo FXML da nova janela
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/library_management/View/MainScreens/MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/br/com/library_management/View/MainScreen/mainView.fxml"));
             Scene scene = new Scene(loader.load());
             
             // Obtém a referência da janela atual

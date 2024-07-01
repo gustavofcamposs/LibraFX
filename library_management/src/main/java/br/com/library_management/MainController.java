@@ -18,12 +18,14 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.Alert.AlertType;
 
+
 public class MainController {
+
 
     @FXML
     private VBox dynamicContent; //contentPane é ID referente ao AnchorPane que está centralizado
 
-    @FXML
+    @FXML   
     private VBox menuContent;
 
     @FXML
@@ -45,8 +47,8 @@ public class MainController {
         //e -> (Expressão Lambda) && setContent(Caminho/Para/Tela1.fxml)
         Platform.runLater(() -> {
             home.setOnAction(e -> loadContent("/fxml/main/tela1.fxml"));
-            registerNewBook.setOnAction(e -> loadContent("/fxml/main/tela1.fxml"));  
-            settings.setOnAction(e -> loadContent("/br/com/library_management/View/MainScreens/Screen_Settings.fxml"));
+            registerNewBook.setOnAction(e -> loadContent("/fxml/main/tela2.fxml"));  
+            settings.setOnAction(e -> loadContent("/br/com/library_management/View/MainScreen/Screen_Settings.fxml"));
         });
 
     }
@@ -62,6 +64,7 @@ public class MainController {
     public VBox getMenuContent(){
         return menuContent;
     }
+
 
     private void loadContent(String fxmlPath) {
         try {
@@ -86,9 +89,9 @@ public class MainController {
             dynamicContent.getChildren().clear();
             dynamicContent.getChildren().add(newContent); //O que foi carregado mostrará na tela
     
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-            // Em caso de erro, exibe uma mensagem
+            dynamicContent.getChildren().clear();
             Label errorLabel = new Label("Erro ao carregar a tela! " + fxmlPath);
             dynamicContent.getChildren().add(errorLabel);
         }
@@ -128,5 +131,5 @@ public class MainController {
             }
         }
     }
-
-}
+    
+}   

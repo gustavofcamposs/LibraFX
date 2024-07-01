@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane fx:id="containerScrollPane" fitToWidth="true" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="760.0" styleClass="containerScroll" stylesheets="@../../style/Main/screen_Settings.css" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.library_management.SettingsController">
+  <content>
+    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="753.0" styleClass="ContentAnchorPane">
+         <children>
+            <Button layoutX="325.0" layoutY="587.0" mnemonicParsing="false" text="TESTE ScrollPane" />
+            <Pane layoutX="73.0" layoutY="23.0" prefHeight="190.0" prefWidth="580.0" styleClass="contentBlock">
+               <children>
+                  <Text layoutX="20.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleContainer" text="Suas Informações" />
+                  <Label fx:id="labelName" layoutX="80.0" layoutY="56.0" prefHeight="15.0" prefWidth="244.0" styleClass="label" textFill="#101010" />
+                  <Text layoutX="31.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topics" text="Nome:" />
+                  <Text layoutX="31.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topics" text="E-mail:" />
+                  <Text layoutX="31.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topics" text="Telefone:" />
+                  <Label fx:id="labelEmail" layoutX="94.0" layoutY="97.0" prefHeight="15.0" prefWidth="244.0" styleClass="label" />
+                  <Label fx:id="labelPhone" layoutX="109.0" layoutY="137.0" prefHeight="15.0" prefWidth="244.0" styleClass="label" />
+               </children>
+            </Pane>
+            <Pane layoutX="73.0" layoutY="272.0" prefHeight="177.0" prefWidth="587.0" styleClass="contentBlock">
+               <children>
+                  <Text layoutX="14.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="titleContainer" text="Preferências do Sistema" />
+                  <Button layoutX="31.0" layoutY="81.0" mnemonicParsing="false" onAction="#switchToDarkTheme" prefHeight="29.0" prefWidth="32.0" styleClass="optionDarkTheme" />
+                  <Text layoutX="29.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topics" text="Tema" />
+                  <Text layoutX="29.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="topics" text="Idioma" />
+                  <Button layoutX="65.0" layoutY="81.0" mnemonicParsing="false" onAction="#switchToWhiteTheme" prefHeight="29.0" prefWidth="32.0" styleClass="optionWhiteTheme" />
+               </children>
+            </Pane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

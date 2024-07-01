@@ -1,0 +1,42 @@
+/* All the standard Menu style */
+/*As cores serão definidas nos estilos de themas */
+
+.ContainerMenu{
+    -fx-min-width: 350px;
+}
+
+.OpcoesMenu{
+    -fx-background-color: transparent;
+
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0;
+    -fx-border-style: solid;
+    -fx-border-radius: 7px;
+
+    -fx-font-family:'Courier New', Courier, monospace ;
+}
+
+.OpcoesMenu:hover{
+    -fx-text-fill: #82A67D;
+    -fx-background-radius: 10px;
+    -fx-border-width: 0 0 0 0; /*excluding the border when in focus */
+}
+
+
+.BotaoSair{
+    -fx-background-color: transparent;
+
+    -fx-font-size: 14px;  
+    -fx-font-weight: bolder;
+
+    -fx-border-width: 0 0 0.2 0; 
+    -fx-border-style: solid;
+    -fx-border-radius: 7px; 
+}
+
+.BotaoSair:hover{
+    -fx-background-color: #FD4659;
+    -fx-text-fill: #f0EEEB;
+}

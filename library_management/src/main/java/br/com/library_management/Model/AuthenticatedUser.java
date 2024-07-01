@@ -1,5 +1,6 @@
 package br.com.library_management.Model;
 
+
 public class AuthenticatedUser {
     
     private static AuthenticatedUser instance;
