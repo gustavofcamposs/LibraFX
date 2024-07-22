@@ -1,4 +1,4 @@
-package br.com.library_management;
+package br.com.library_management.Controller.Main;
 
 
 import br.com.library_management.Model.AuthenticatedUser;
@@ -25,7 +25,7 @@ public class SettingsController {
     @FXML
     private Label labelPhone;   
 
-    private MainController mainController; //Atributo para armazenar a instancia da Cena 
+    private MainController mainController; //Atributo para armazenar a instancia da Cena
 
     private MainController menuController; //Atributo para armazenar a instancia da Cena 
 
