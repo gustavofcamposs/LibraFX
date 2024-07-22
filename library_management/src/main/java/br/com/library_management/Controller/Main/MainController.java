@@ -1,4 +1,4 @@
-package br.com.library_management;
+package br.com.library_management.Controller.Main;
 
 
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class MainController {
 
         //e -> (Expressão Lambda) && setContent(Caminho/Para/Tela1.fxml)
         Platform.runLater(() -> {
-            home.setOnAction(e -> loadContent("/fxml/main/tela1.fxml"));
+            home.setOnAction(e -> loadContent("/br/com/library_management/View/MainScreen/homeBooks.fxml"));
             registerNewBook.setOnAction(e -> loadContent("/fxml/main/tela2.fxml"));  
             settings.setOnAction(e -> loadContent("/br/com/library_management/View/MainScreen/Screen_Settings.fxml"));
         });
