@@ -15,6 +15,7 @@ public class BookController {
 
     @FXML
     private VBox contentContainer;
+    
 
     @FXML
     public void initialize() {
